@@ -85,6 +85,7 @@ def process_choice(choice):
         for cat in category:
             print(cat)
     # 5. add transaction
+    # Author: Kelly Zhang
     elif choice=='5':
         print("adding a transaction")
         name = input("new category name: ")
@@ -92,6 +93,7 @@ def process_choice(choice):
         cat = {'name': name, 'desc': desc}
         category.add(cat)
     # 6. delete transaction
+    # Author: Kelly Zhang
     elif choice=='6': 
         print("deleting a transaction")
         rowid = int(input("rowid to be deleted: "))
@@ -113,6 +115,7 @@ def process_choice(choice):
         print("summarizing transactions by category")
 
     # 11. print this menu
+    # Author: Kelly Zhang
     elif choice=='11':
         print("menu: ", menu)
     # all other choices
