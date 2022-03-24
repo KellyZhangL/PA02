@@ -9,13 +9,13 @@ Stores financial transactions with the fields
 class Transaction():
     '''represents a financial transaction'''
 
-    def __init__(self, filename):
-        connection_obj = sqlite3.connect(filename) # connection object
-        cursor_obj = connection_obj.cusor() # cursor object
+    def __init__(self, dbfile):
+        connection_obj = sqlite3.connect(dbfile) # connection object
+        cursor_obj = connection_obj.cursor() # cursor object
         cursor_obj.execute("DROP TABLE IF EXISTS TRANSACTION")
 
         table = '''CREATE TABLE TRANSACTION(
-            item # int, 
+            item# int, 
             amount int, 
             category text, 
             date date, 

@@ -26,7 +26,11 @@ class Category():
         con= sqlite3.connect(dbfile)
         cur = con.cursor()
         cur.execute('''CREATE TABLE IF NOT EXISTS categories
-                    (name text, desc text)''')
+                    (item# int, 
+                    amount int, 
+                    category text, 
+                    date date, 
+                    description text)''')
         con.commit()
         con.close()
         self.dbfile = dbfile
