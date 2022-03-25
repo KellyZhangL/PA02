@@ -26,7 +26,7 @@ class Category():
         con= sqlite3.connect(dbfile)
         cur = con.cursor()
         cur.execute('''CREATE TABLE IF NOT EXISTS categories
-                    (item# int, 
+                    (item int, 
                     amount int, 
                     category text, 
                     date date, 
@@ -94,3 +94,29 @@ class Category():
         ''',(rowid,))
         con.commit()
         con.close()
+
+    def select_by_date(self, date):
+        ''' select all transactions by date
+                    this returns the rowid of the inserted element
+                '''
+        con = sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''SELECT * from categories where date=(?)
+                ''', (date,))
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_cat_dict_list(tuples)
+
+    def select_by_month(self, month):
+        ''' select all transactions by date
+                            this returns the rowid of the inserted element
+                        '''
+        con = sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''SELECT * from categories where strftime('%Y-%m',date)=(?)
+                        ''', (month,))
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_cat_dict_list(tuples)
