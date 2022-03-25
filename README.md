@@ -7,6 +7,7 @@ This git repository is for team 31's finance tracker, which includes a Python cl
 ```python3 tracker.py```
 
 This will pull up the Transaction Menu: <br>
+
 0. quit
 1. show categories
 2. add category
