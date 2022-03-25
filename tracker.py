@@ -57,20 +57,22 @@ menu = '''
 '''
 
 
-
-
 def process_choice(choice):
 
-    if choice=='0':
+    # 0. quit
+    if choice=='0': 
         return
+    # 1. show categories
     elif choice=='1':
         cats = category.select_all()
         print_categories(cats)
+    # 2. add category
     elif choice=='2':
         name = input("category name: ")
         desc = input("category description: ")
         cat = {'name':name, 'desc':desc}
         category.add(cat)
+    # 3. modify category
     elif choice=='3':
         print("modifying category")
         rowid = int(input("rowid: "))
@@ -78,6 +80,46 @@ def process_choice(choice):
         desc = input("new category description: ")
         cat = {'name':name, 'desc':desc}
         category.update(rowid,cat)
+    # 4. show transactions
+    elif choice=='4':
+        for cat in category:
+            print(cat)
+    # 5. add transaction
+    # Author: Kelly Zhang
+    elif choice=='5':
+        print("adding a transaction")
+        name = input("new category name: ")
+        desc = input("new category description: ")
+        cat = {'name': name, 'desc': desc}
+        category.add(cat)
+    # 6. delete transaction
+    # Author: Kelly Zhang
+    elif choice=='6': 
+        print("deleting a transaction")
+        rowid = int(input("rowid to be deleted: "))
+        category.delete(rowid)
+    # 7. summarize transactions by date
+    # Author: Xianzhen Zhao
+    elif choice=='7':
+        print("summarizing transactions by date")
+
+    # 8. summarize transactions by month
+    elif choice=='8':
+        print("summarizing transactions by month")
+
+    # 9. summarize transactions by year
+    elif choice=='9': 
+        print("summarizing transactions by year")
+
+    # 10. summarize transactions by category
+    elif choice=='10':
+        print("summarizing transactions by category")
+
+    # 11. print this menu
+    # Author: Kelly Zhang
+    elif choice=='11':
+        print("menu: ", menu)
+    # all other choices
     else:
         print("choice",choice,"not yet implemented")
 
