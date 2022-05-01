@@ -3,14 +3,25 @@
 
 This git repository is for team 31's finance tracker, which includes a Python class Category to store financial transactions inside a SQL table, features to navigate and interact with the financial transactions in tracker.py, pytest tests for testing the features in test_category.py.
 
-## Running Pylint
+## Run pylint
 ```bash
 echo "pylint category.py
     pylint tracker.py"
 ````
 
-## How to Run 
-```python3 tracker.py```
+## Run Pytest
+```bash
+echo "pytest -v -m test_to_cat_dict
+    pytest -v -m test_add
+    pytest -v -m test_delete
+    pytest -v -m test_update"
+```
+
+## Run tracker.py 
+```bash
+echo "python3 tracker.py
+"
+```
 
 This will pull up the Transaction Menu: <br>
 

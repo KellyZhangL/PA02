@@ -80,10 +80,12 @@ def process_choice(choice):
     # Author: Kelly Zhang
     elif choice == '5':
         print("adding a transaction")
-        name = input("new category name: ")
-        desc = input("new category description: ")
-        cat = {'name': name, 'desc': desc}
-        category.add(cat)
+        amount = input("new amount: ")
+        category = input("category name: ")
+        date = input("date(YYYY-MM): ")
+        desc = input("new transaction description: ")
+        transaction = {'amount': amount, 'category': category, 'date': date, 'desc': desc}
+        category.add(transaction)
     # 6. delete transaction
     # Author: Kelly Zhang
     elif choice == '6':
@@ -138,6 +140,7 @@ def process_choice(choice):
     # Author: Kelly Zhang
     elif choice == '11':
         print("menu: ", menu)
+
     # all other choices
     else:
         print("choice", choice, "not yet implemented")
