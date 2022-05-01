@@ -18,7 +18,7 @@ columns:
 amount, category, date (yyyymmdd), description
 In place of SQL queries, we will have method calls.
 This app will store the data in a SQLite database ~/tracker.db
-Note the actual implementation of the ORM is hidden and so it 
+Note the actual implementation of the ORM is hidden and so it
 could be replaced with PostgreSQL or Pandas or straight python lists
 '''
 
@@ -143,7 +143,7 @@ def process_choice(choice):
         print("choice", choice, "not yet implemented")
 
     choice = input("> ")
-    return (choice)
+    return choice
 
 
 def toplevel():
